@@ -3,10 +3,11 @@
 <!-- Appointment List View -->
 <div ng-hide="editing">
 	<button class="btn btn-primary" ng-click="addAppointment(newAppointment)">Add appointment</button>
+	<br><br>
 	<table border="1">
 		<tr ng-repeat="appointment in appointmentList">
-			<td>{{appointment.title}}</td>
-			<td>{{appointment.start_date | date:'medium'}}</td>
+			<td>&nbsp;{{appointment.title}}&nbsp;</td>
+			<td>&nbsp;{{appointment.start_date | date:'medium'}}&nbsp;</td>
 			<td><button class="btn btn-success" ng-click="editAppointment($index)">Edit</button></td>
 			<td><button class="btn btn-success" ng-click="deleteAppointment($index)">Delete</button></td>
 		</tr>
@@ -26,6 +27,24 @@
 	    <label class="control-label" for="inputPassword">Start Date</label>
 	    <div class="controls">
 	      <input type="date" ng-model="appointmentList[appointmentIndex].start_date">
+	    </div>
+	  </div>
+	  <div class="control-group">
+	    <label class="control-label" for="inputPassword">End Date</label>
+	    <div class="controls">
+	      <input type="date" ng-model="appointmentList[appointmentIndex].end_date">
+	    </div>
+	  </div>
+	  <div class="control-group">
+	    <label class="control-label">Appointment</label>
+	    <div class="controls">
+	      <input type="text" ng-model="appointmentList[appointmentIndex].appointment_with">
+	    </div>
+	  </div>
+	  <div class="control-group">
+	    <label class="control-label">Description</label>
+	    <div class="controls">
+	      <input type="text" ng-model="appointmentList[appointmentIndex].description">
 	    </div>
 	  </div>
 	  <div class="control-group">
