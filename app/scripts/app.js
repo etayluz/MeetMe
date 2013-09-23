@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('yoAngularApp', [])
+angular.module('meetMeApp', [])
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {

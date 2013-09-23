@@ -1,4 +1,4 @@
-angular.module('yoAngularApp')
+angular.module('meetMeApp')
   .controller('MainCtrl', function ($scope) {
 
     $scope.appointmentList = [];
