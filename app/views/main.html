@@ -1,0 +1,48 @@
+<h1> Meet Me Scheduler </h1>
+
+<input type="text" ng-model="newAppointment.title">
+<br>
+<input type="date" ng-model="newAppointment.start_date">
+
+<br>
+<button class="btn btn-primary" ng-click="addAppointment(newAppointment)">Add appointment</button>
+
+
+<!-- Appointment List View -->
+<div ng-hide="editing">
+	<table border="1">
+		<tr ng-repeat="appointment in appointmentList">
+			<td>{{appointment.title}}</td>
+			<td>{{appointment.start_date | date:'medium'}}</td>
+			<td><button class="btn btn-success" ng-click="toggleEdit($index)">Edit</button></td>
+			<td><button class="btn btn-success" ng-click="deleteAppointment($index)">Delete</button></td>
+		</tr>
+	</table>
+</div>
+
+<!-- Add/Edit Appointment View -->
+<div ng-show="editing">
+	<form class="form-horizontal">
+	  <div class="control-group">
+	    <label class="control-label">Title</label>
+	    <div class="controls">
+	      <input type="text" ng-model="appointment.title">
+	    </div>
+	  </div>
+	  <div class="control-group">
+	    <label class="control-label" for="inputPassword">Start Date</label>
+	    <div class="controls">
+	      <input type="date" ng-model="appointment.start_date">
+	    </div>
+	  </div>
+	  <div class="control-group">
+	    <div class="controls">
+	      <button class="btn" ng-click="toggleEdit()">Save</button>
+	    </div>
+	  </div>
+	</form>
+</div>
+
+
+
+
